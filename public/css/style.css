@@ -1,0 +1,59 @@
+.color{
+	color: gold;
+	background-color: maroon;
+    text-decoration: none;
+}
+.size{
+	font-size: 12vh;
+}
+
+.center{
+	text-align: center;
+}
+
+.left{
+	text-align: left;
+}
+
+.right{
+	text-align: right;
+}
+
+header{
+	text-align: center;
+	font-size: 500%;
+	border-style: groove;
+	border-color:white;
+	clear: right;
+}
+h1{
+	text-align: center;
+}
+
+body{
+	background-image: url(/image/pizza1.jpeg);
+	color: gold;
+	background-color: black;
+	background: contain;
+	background-size:cover;
+	background-repeat:no-repeat;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+}
+
+
+footer{
+	color: white;
+	position: bottom;
+	bottom: 0;
+	border: groove;
+	border-color: white;
+	border-bottom-style: none;
+	border-width: 1%;
+	height: 5%;
+	width: 100%;
+	margin-top: 10%;
+	background-color: black;
+	opacity: 50%
+}
