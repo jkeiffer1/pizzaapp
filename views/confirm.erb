@@ -1,6 +1,47 @@
-<%=size%>
-<%=sauce%>
-<%=crust%>
-<%=meats%>
-<%=veggies%>
-<%=cheese%>
+size <%=size%>
+crust <%=crust%>
+sauce <%=sauce%>
+meats <%=meats%>
+veggies <%=veggies%>
+cheese <%=cheese%>
+
+<center>
+<form method"post" action="confirm">
+	<%sauce.each do |x| %>
+		<%=x%>-	<input type="radio" name="sauce[]" value="<%=x%>">Yes
+		<input type="radio" name="sauce[]">No<br>
+	<%end%>
+	<br>
+
+	<%meats.each do |x| %>
+		<%=x%>- <input type="radio" name="meats[]" value="<%=x%>">Yes
+		<input type="radio" name="meats[]">No<br>
+	<%end%>
+	<br>
+
+	<%veggies.each do |x| %>
+		<%=x%>- <input type="radio" name="veggies[]" value="<%=x%>">Yes
+		<input type="radio" name="veggies[]">No<br>
+	<%end%>
+	<br>
+
+	<%cheese.each do |x| %>
+		<%=x%>- <input type="radio" name="cheese[]" value="<%=x%>">Yes
+		<input type="radio" name="cheese[]">No<br>
+		<%end%>
+		</form></center>
+
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+
