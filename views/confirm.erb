@@ -3,45 +3,74 @@ crust <%=crust%>
 sauce <%=sauce%>
 meats <%=meats%>
 veggies <%=veggies%>
-cheese <%=cheese%>
+cheese <%=cheese%><br>
+<br>
 
-<center>
-<form method"post" action="confirm">
+<form method="post" action="confirm">
+<strong>Size</strong><br>
+	<input type="radio" name="size" value="<%=size%>" checked><%=size%><br>
+<strong>Would you like to reselect your size?</strong><br>
+	<input type="radio" name="size" value="small">Small<br>
+	<input type="radio" name="size" value="medium">Medium<br>
+	<input type="radio" name="size" value="large">Large<br>
+	<input type="radio" name="size" value="X-large">X-large<br>
+	<br>
+<strong>Crust</strong><br>
+	<input type="radio" name="crust" value="<%=crust%>" checked><%=crust%><br>
+<strong>Would you like to reselect your crust?</strong><br>
+	<input type="radio" name="crust" value="Thin">Thin<br>
+	<input type="radio" name="crust" value="Thick">Thick<br>
+	<input type="radio" name="crust" value="Stuffed">Stuffed<br>
+	<br>
+<strong>Sauce(s)</strong><br>
 	<%if sauce == nil%>
 	<%else%>
 		<%sauce.each do |x| %>
-		<%=x%>-	<input type="radio" name="sauce[<%=x%>]" value="<%=x%>">Yes
-		<input type="radio" name="sauce[<%=x%>]">No<br>
+		<%=x%>-	<input type="radio" name="sauce[<%=x%>]" value="<%=x%>" checked>Yes
+		<input type="radio" name="sauce[<%=x%>]" value="">No<br>
 		<%end%>
 	<%end%>
 <br>
-
+<strong>Meats</strong><br>
 	<%if meats == nil%>
 	<%else%>
 		<%meats.each do |x| %>
-		<%=x%>- <input type="radio" name="meats[<%=x%>]" value="<%=x%>">Yes
-		<input type="radio" name="meats[<%=x%>]">No<br>
+		<%=x%>- <input type="radio" name="meats[<%=x%>]" value="<%=x%>" checked>Yes
+		<input type="radio" name="meats[<%=x%>]" value="">No<br>
 		<%end%>
 	<%end%>
 <br>
-
+<strong>Veggies</strong><br>
 	<%if veggies == nil%>
 	<%else%>
 		<%veggies.each do |x| %>
-			<%=x%>- <input type="radio" name="veggies[<%=x%>]" value="<%=x%>">Yes
-			<input type="radio" name="veggies[<%=x%>]">No<br>
+			<%=x%>- <input type="radio" name="veggies[<%=x%>]" value="<%=x%>" checked>Yes
+			<input type="radio" name="veggies[<%=x%>]" value="">No<br>
 		<%end%>
 	<%end%>
 <br>
 
-	<%if cheese == nil%>
+<strong>Cheese(s)</strong><br> 
+
+	<%if cheese == ""%>
+		<strong>You selected no cheese, would you like to order a proper pizza istead?</strong><br>
+			<input type="checkbox" name="cheese[]" value="Cheese" required>Regular<br>
+			<input type="checkbox" name="cheese[]" value="Four cheese">Four cheese<br>
+			<input type="checkbox" name="cheese[]" value="Extra cheese">Extra cheese<br>
 	<%else%>
-		<%cheese.each do |x| %>
-			<%=x%>- <input type="radio" name="cheese[<%=x%>]" value="<%=x%>">Yes
-			<input type="radio" name="cheese[<%=x%>]">No<br>
-		<%end%>
-	<%end%>
-		</form></center>
+			<input type="checkbox" name="cheese[]" value="Cheese" required>Regular<br>
+			<input type="checkbox" name="cheese[]" value="Four cheese">Four cheese<br>
+			<input type="checkbox" name="cheese[]" value="Extra cheese">Extra cheese<br>
+	<%end%><br>
+
+<strong>Delivery</strong><br>
+	<input type="radio" name="delivery" value="delivery">Yes<br>
+	<input type="radio" name="delivery" value="">No<br>
+<strong>If delivery please enter address to be delivered to.</strong><br>
+	<input type="text" placeholder="Address" name="address"><br>
+	<input type="submit" value="Place Order">
+	<br>
+		</form>
 
 	
 	
