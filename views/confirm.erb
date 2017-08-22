@@ -46,6 +46,7 @@ cheese <%=cheese%><br>
 	<%if veggies == nil%>
 	<%else%>
 		<%veggies.each do |x| %>
+			<img src = "/images/<%=x%>.jpeg"  width="42" height="42">
 			<%=x%>- <input type="radio" name="veggies[<%=x%>]" value="<%=x%>" checked>Yes
 			<input type="radio" name="veggies[<%=x%>]" value="">No<br>
 		<%end%>
