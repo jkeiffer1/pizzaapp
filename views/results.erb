@@ -1,32 +1,36 @@
 <center><h1>Thank you for your order!<br>
 Here's your pizza!</h1></center>
-
-<%=size%><br>
-<%crust%> Crust<br>
+<strong>Name on the order is-</strong> <%=lastname%><br>
+<strong>Size-</strong> <%=size%><br>
+----------------------<br>
+<strong>Crust-</strong> <%=crust%> Crust<br>
+----------------------<br>
+<strong>Sauce(s)-</strong> 
 <%sauce.each_pair do |key,value| %>
-		<%=value%>
+	<br><%=value%>
 	<%end%><br>
+----------------------<br>
+<strong>Meats-</strong> 
 <%meats.each_pair do |key,value| %>
-		<%=value%>
+	<br><%=value%>
 	<%end%><br>
+----------------------<br>
+<strong>Veggies-</strong>
 <%veggies.each_pair do |key,value| %>
-		<%=value%>
+	<br><%=value%>
 	<%end%><br>
-<%cheese.each do |x|%>
-	<%=x%>
-<%end%>
-<%=delivery%>
+----------------------<br>
 
+<strong>Cheese-</strong>
+<%cheese.each do |x|%>
+	<br><%=x%>
+<%end%><br>
+----------------------<br>
+<strong>Delivery, pickup, or dine-in-</strong> <%=delivery%><br>
 <br>
-<br>
-<br>
-size <%=size%>
-crust <%=crust%>
-sauce <%=sauce%>
-meats <%=meats%>
-veggies <%=veggies%>
-cheese <%=cheese%>
-lastname <%=lastname%>
-delivery <%=delivery%>
-address <%=address%><br>
-<br>
+<strong>Delivery Address-</strong> <%=address%>
+<form method="post" action="results">
+<input type="submit" value="Make another pizza?">
+</form>
+
+

@@ -34,7 +34,7 @@ post '/confirm' do
 end
 
 get '/results' do
-	erb :results, locals:{size:session[:size], crust:session[:crust], sauce:session[:sauce], meats:session[:meats], veggies:session[:veggies], cheese:session[:cheese], delivery:session[:deliver], address:session[:address], lastname:session[:lastname]}
+	erb :results, locals:{size:session[:size], crust:session[:crust], sauce:session[:sauce], meats:session[:meats], veggies:session[:veggies], cheese:session[:cheese], delivery:session[:delivery], address:session[:address], lastname:session[:lastname]}
 end
 
 post '/results' do
@@ -47,4 +47,5 @@ post '/results' do
 	session[:lastname] = params[:lastname]
 	session[:delivery] = params[:delivery]
 	session[:address] = params[:address]
+	redirect '/'
 end
