@@ -54,11 +54,11 @@ cheese <%=cheese%><br>
 
 	<%if cheese == ""%>
 		<strong>You selected no cheese, would you like to order a proper pizza istead?</strong><br>
-			<input type="checkbox" name="cheese[]" value="Cheese" required>Regular<br>
+			<input type="checkbox" name="cheese[]" value="Regular" required>Regular<br>
 			<input type="checkbox" name="cheese[]" value="Four cheese">Four cheese<br>
 			<input type="checkbox" name="cheese[]" value="Extra cheese">Extra cheese<br>
 	<%else%>
-			<input type="checkbox" name="cheese[]" value="Cheese" required>Regular<br>
+			<input type="checkbox" name="cheese[]" value="Regular" required>Regular<br>
 			<input type="checkbox" name="cheese[]" value="Four cheese">Four cheese<br>
 			<input type="checkbox" name="cheese[]" value="Extra cheese">Extra cheese<br>
 	<%end%><br>
@@ -66,6 +66,8 @@ cheese <%=cheese%><br>
 <strong>Delivery</strong><br>
 	<input type="radio" name="delivery" value="delivery">Yes<br>
 	<input type="radio" name="delivery" value="">No<br>
+<strong>Name on the order</strong><br>
+	<input type="text" placeholder="Lastname" name="lastname"><br>
 <strong>If delivery please enter address to be delivered to.</strong><br>
 	<input type="text" placeholder="Address" name="address"><br>
 	<input type="submit" value="Place Order">

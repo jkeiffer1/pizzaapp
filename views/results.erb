@@ -1,9 +1,32 @@
+<center><h1>Thank you for your order!<br>
+Here's your pizza!</h1></center>
+
+<%=size%><br>
+<%crust%> Crust<br>
+<%sauce.each_pair do |key,value| %>
+		<%=value%>
+	<%end%><br>
+<%meats.each_pair do |key,value| %>
+		<%=value%>
+	<%end%><br>
+<%veggies.each_pair do |key,value| %>
+		<%=value%>
+	<%end%><br>
+<%cheese.each do |x|%>
+	<%=x%>
+<%end%>
+<%=delivery%>
+
+<br>
+<br>
+<br>
 size <%=size%>
 crust <%=crust%>
 sauce <%=sauce%>
 meats <%=meats%>
 veggies <%=veggies%>
 cheese <%=cheese%>
-delivery<%=cheese%>
-address<%=address%><br>
+lastname <%=lastname%>
+delivery <%=delivery%>
+address <%=address%><br>
 <br>
