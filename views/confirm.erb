@@ -18,14 +18,15 @@ cheese <%=cheese%><br>
 <strong>Crust</strong><br>
 	<input type="radio" name="crust" value="<%=crust%>" checked><%=crust%><br>
 <strong>Would you like to reselect your crust?</strong><br>
-	<input type="radio" name="crust" value="Thin">Thin<br>
-	<input type="radio" name="crust" value="Thick">Thick<br>
-	<input type="radio" name="crust" value="Stuffed">Stuffed<br>
+	<input type="radio" name="crust" value="thin">Thin<br>
+	<input type="radio" name="crust" value="thick">Thick<br>
+	<input type="radio" name="crust" value="stuffed">Stuffed<br>
 	<br>
 <strong>Sauce(s)</strong><br>
 	<%if sauce == nil%>
 	<%else%>
 		<%sauce.each do |x| %>
+		<img src = "/images/<%=x%>.jpeg"  width="42" height="42">
 		<%=x%>-	<input type="radio" name="sauce[<%=x%>]" value="<%=x%>" checked>Yes
 		<input type="radio" name="sauce[<%=x%>]" value="">No<br>
 		<%end%>
@@ -35,6 +36,7 @@ cheese <%=cheese%><br>
 	<%if meats == nil%>
 	<%else%>
 		<%meats.each do |x| %>
+		<img src = "/images/<%=x%>.jpeg"  width="42" height="42">
 		<%=x%>- <input type="radio" name="meats[<%=x%>]" value="<%=x%>" checked>Yes
 		<input type="radio" name="meats[<%=x%>]" value="">No<br>
 		<%end%>
@@ -54,13 +56,19 @@ cheese <%=cheese%><br>
 
 	<%if cheese == ""%>
 		<strong>You selected no cheese, would you like to order a proper pizza istead?</strong><br>
-			<input type="checkbox" name="cheese[]" value="Regular" required>Regular<br>
-			<input type="checkbox" name="cheese[]" value="Four cheese">Four cheese<br>
-			<input type="checkbox" name="cheese[]" value="Extra cheese">Extra cheese<br>
+			<img src = "/images/regular.jpeg"  width="42" height="42">
+			<input type="checkbox" name="cheese[]" value="regular" required>Regular<br>
+			<img src = "/images/four cheese.jpeg"  width="42" height="42">
+			<input type="checkbox" name="cheese[]" value="four cheese">Four cheese<br>
+			<img src = "/images/extra cheese.jpeg"  width="42" height="42">
+			<input type="checkbox" name="cheese[]" value="extra cheese">Extra cheese<br>
 	<%else%>
-			<input type="checkbox" name="cheese[]" value="Regular" required>Regular<br>
-			<input type="checkbox" name="cheese[]" value="Four cheese">Four cheese<br>
-			<input type="checkbox" name="cheese[]" value="Extra cheese">Extra cheese<br>
+			<img src = "/images/regular.jpeg"  width="42" height="42">
+			<input type="checkbox" name="cheese[]" value="regular" required>Regular<br>
+			<img src = "/images/four cheese.jpeg"  width="42" height="42">
+			<input type="checkbox" name="cheese[]" value="four cheese">Four cheese<br>
+			<img src = "/images/extra cheese.jpeg"  width="42" height="42">
+			<input type="checkbox" name="cheese[]" value="extra cheese">Extra cheese<br>
 	<%end%><br>
 
 <strong>Delivery</strong><br>
