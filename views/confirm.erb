@@ -7,28 +7,40 @@ cheese <%=cheese%>
 
 <center>
 <form method"post" action="confirm">
-	<%sauce.each do |x| %>
-		<%=x%>-	<input type="radio" name="sauce[]" value="<%=x%>">Yes
-		<input type="radio" name="sauce[]">No<br>
-	<%end%>
-	<br>
-
-	<%meats.each do |x| %>
-		<%=x%>- <input type="radio" name="meats[]" value="<%=x%>">Yes
-		<input type="radio" name="meats[]">No<br>
-	<%end%>
-	<br>
-
-	<%veggies.each do |x| %>
-		<%=x%>- <input type="radio" name="veggies[]" value="<%=x%>">Yes
-		<input type="radio" name="veggies[]">No<br>
-	<%end%>
-	<br>
-
-	<%cheese.each do |x| %>
-		<%=x%>- <input type="radio" name="cheese[]" value="<%=x%>">Yes
-		<input type="radio" name="cheese[]">No<br>
+	<%if sauce == nil%>
+	<%else%>
+		<%sauce.each do |x| %>
+		<%=x%>-	<input type="radio" name="sauce[<%=x%>]" value="<%=x%>">Yes
+		<input type="radio" name="sauce[<%=x%>]">No<br>
 		<%end%>
+	<%end%>
+<br>
+
+	<%if meats == nil%>
+	<%else%>
+		<%meats.each do |x| %>
+		<%=x%>- <input type="radio" name="meats[<%=x%>]" value="<%=x%>">Yes
+		<input type="radio" name="meats[<%=x%>]">No<br>
+		<%end%>
+	<%end%>
+<br>
+
+	<%if veggies == nil%>
+	<%else%>
+		<%veggies.each do |x| %>
+			<%=x%>- <input type="radio" name="veggies[<%=x%>]" value="<%=x%>">Yes
+			<input type="radio" name="veggies[<%=x%>]">No<br>
+		<%end%>
+	<%end%>
+<br>
+
+	<%if cheese == nil%>
+	<%else%>
+		<%cheese.each do |x| %>
+			<%=x%>- <input type="radio" name="cheese[<%=x%>]" value="<%=x%>">Yes
+			<input type="radio" name="cheese[<%=x%>]">No<br>
+		<%end%>
+	<%end%>
 		</form></center>
 
 	
