@@ -8,9 +8,12 @@ Here's your pizza!</h1>
 <strong>Sauce(s)-</strong> <br>
 <%if sauce == nil%>
 <%else%>
-<%sauce.each do |x| %>
-<img src = "/images/<%=x%>.jpeg"  width="60" height="60">
-	<%=x%><br>
+	<%sauce.each do |x| %>
+<%if x == "on"%>
+<%else%>
+	<img src = "/images/<%=x%>.jpeg"  width="60" height="60">
+		<%=x%><br>
+		<%end%>
 	<%end%>
 <%end%><br>
 ----------------------<br>
@@ -18,8 +21,11 @@ Here's your pizza!</h1>
 <%if meats == nil%>
 <%else%>
 	<%meats.each do |x| %>
+<%if x == "on"%>
+<%else%>
 	<img src = "/images/<%=x%>.jpeg"  width="60" height="60">
 	<%=x%><br>
+		<%end%>
 	<%end%>
 <%end%><br>
 ----------------------<br>
@@ -27,8 +33,11 @@ Here's your pizza!</h1>
 <%if veggies == nil%>
 <%else%>
 	<%veggies.each do |x| %>
+<%if x == "on"%>
+<%else%>
 	<img src = "/images/<%=x%>.jpeg"  width="60" height="60">
 	<%=x%><br>
+		<%end%>
 	<%end%>
 <%end%><br>
 ----------------------<br>
