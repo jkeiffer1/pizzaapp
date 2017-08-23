@@ -20,7 +20,7 @@
 	<%if sauce == nil%>
 	<%else%>
 		<%sauce.each do |x| %>
-		<img src = "/images/<%=x%>.jpeg"  width="42" height="42">
+		<img src = "/images/<%=x%>.jpeg"  width="60" height="60">
 		<%=x%>-	<input type="radio" name="sauce[<%=x%>]" value="<%=x%>" checked>Yes
 		<input type="radio" name="sauce[<%=x%>]" value="">No<br>
 		<%end%>
@@ -30,7 +30,7 @@
 	<%if meats == nil%>
 	<%else%>
 		<%meats.each do |x| %>
-		<img src = "/images/<%=x%>.jpeg"  width="42" height="42">
+		<img src = "/images/<%=x%>.jpeg"  width="60" height="60">
 		<%=x%>- <input type="radio" name="meats[<%=x%>]" value="<%=x%>" checked>Yes
 		<input type="radio" name="meats[<%=x%>]" value="">No<br>
 		<%end%>
@@ -40,7 +40,7 @@
 	<%if veggies == nil%>
 	<%else%>
 		<%veggies.each do |x| %>
-			<img src = "/images/<%=x%>.jpeg"  width="42" height="42">
+			<img src = "/images/<%=x%>.jpeg"  width="60" height="60">
 			<%=x%>- <input type="radio" name="veggies[<%=x%>]" value="<%=x%>" checked>Yes
 			<input type="radio" name="veggies[<%=x%>]" value="">No<br>
 		<%end%>
@@ -51,18 +51,18 @@
 
 	<%if cheese == ""%>
 		<strong>You selected no cheese, would you like to order a proper pizza istead?</strong><br>
-			<img src = "/images/regular.jpeg"  width="42" height="42">
+			<img src = "/images/regular.jpeg"  width="60" height="60">
 			<input type="checkbox" name="cheese[]" value="regular" required>Regular<br>
-			<img src = "/images/four cheese.jpeg"  width="42" height="42">
+			<img src = "/images/four cheese.jpeg"  width="60" height="60">
 			<input type="checkbox" name="cheese[]" value="four cheese">Four cheese<br>
-			<img src = "/images/extra cheese.jpeg"  width="42" height="42">
+			<img src = "/images/extra cheese.jpeg"  width="60" height="60">
 			<input type="checkbox" name="cheese[]" value="extra cheese">Extra cheese<br>
 	<%else%>
-			<img src = "/images/regular.jpeg"  width="42" height="42">
+			<img src = "/images/regular.jpeg"  width="60" height="60">
 			<input type="checkbox" name="cheese[]" value="regular">Regular<br>
-			<img src = "/images/four cheese.jpeg"  width="42" height="42">
+			<img src = "/images/four cheese.jpeg"  width="60" height="60">
 			<input type="checkbox" name="cheese[]" value="four cheese">Four cheese<br>
-			<img src = "/images/extra cheese.jpeg"  width="42" height="42">
+			<img src = "/images/extra cheese.jpeg"  width="60" height="60">
 			<input type="checkbox" name="cheese[]" value="extra cheese">Extra cheese<br>
 	<%end%><br>
 
