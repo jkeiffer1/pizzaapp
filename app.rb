@@ -30,6 +30,9 @@ post '/confirm' do
 	session[:lastname] = params[:lastname]
 	session[:delivery] = params[:delivery]
 	session[:address] = params[:address]
+	session[:sauce] = sauce.values
+	session[:meats] = meats.values
+	session[:veggies] = veggies.values
 	redirect "/results"
 end
 

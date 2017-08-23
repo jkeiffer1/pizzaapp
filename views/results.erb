@@ -8,27 +8,27 @@ Here's your pizza!</h1>
 <strong>Sauce(s)-</strong> <br>
 <%if sauce == nil%>
 <%else%>
-<%sauce.each_pair do |key,value| %>
-<img src = "/images/<%=value%>.jpeg"  width="60" height="60">
-	<%=value%><br>
+<%sauce.each do |x| %>
+<img src = "/images/<%=x%>.jpeg"  width="60" height="60">
+	<%=x%><br>
 	<%end%>
 <%end%><br>
 ----------------------<br>
 <strong>Meats-</strong> <br>
 <%if meats == nil%>
 <%else%>
-	<%meats.each_pair do |key,value| %>
-	<img src = "/images/<%=value%>.jpeg"  width="60" height="60">
-	<%=value%><br>
+	<%meats.each do |x| %>
+	<img src = "/images/<%=x%>.jpeg"  width="60" height="60">
+	<%=x%><br>
 	<%end%>
 <%end%><br>
 ----------------------<br>
 <strong>Veggies-</strong><br>
 <%if veggies == nil%>
 <%else%>
-	<%veggies.each_pair do |key,value| %>
-	<img src = "/images/<%=value%>.jpeg"  width="60" height="60">
-	<%=value%><br>
+	<%veggies.each do |x| %>
+	<img src = "/images/<%=x%>.jpeg"  width="60" height="60">
+	<%=x%><br>
 	<%end%>
 <%end%><br>
 ----------------------<br>
