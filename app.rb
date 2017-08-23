@@ -23,16 +23,25 @@ end
 post '/confirm' do
 	session[:size] = params[:size]
 	session[:crust] = params[:crust]
-	session[:sauce] = params[:sauce]
-	session[:meats] = params[:meats]
-	session[:veggies] = params[:veggies]
+	sauce = params[:sauce]
+	meats = params[:meats]
+	veggies = params[:veggies]
 	session[:cheese] = params[:cheese]
 	session[:lastname] = params[:lastname]
 	session[:delivery] = params[:delivery]
 	session[:address] = params[:address]
+	if sauce == nil
+	else
 	session[:sauce] = sauce.values
+	end
+	if meats == nil
+	else
 	session[:meats] = meats.values
+	end
+	if veggies == nil
+	else
 	session[:veggies] = veggies.values
+	end
 	redirect "/results"
 end
 

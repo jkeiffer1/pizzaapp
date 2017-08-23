@@ -34,9 +34,12 @@ Here's your pizza!</h1>
 ----------------------<br>
 
 <strong>Cheese-</strong><br>
+<%if cheese == nil%>
+<%else%>
 <%cheese.each do |x|%>
 <img src = "/images/<%=x%>.jpeg"  width="60" height="60">
 	<%=x%><br>
+	<%end%>
 <%end%><br>
 ----------------------<br>
 <strong>Delivery, pickup, or dine-in-</strong> <%=delivery%><br>
