@@ -1,61 +1,116 @@
 <center><h1>Thank you for your order!<br>
 Here's your pizza!</h1>
-<strong>Name on the order is-</strong> <%=lastname%><br>
-<strong>Size-</strong> <%=size%><br>
-----------------------<br>
-<strong>Crust-</strong> <%=crust%> Crust<br>
-----------------------<br>
-<strong>Sauce(s)-</strong> <br>
-<%if sauce == nil%>
-<%else%>
-	<%sauce.each do |x| %>
-<%if x == "on"%>
-<%else%>
-	<img src = "/images/<%=x%>.jpeg"  width="60" height="60">
+<form method="post" action="results">
+	<input type="hidden" name="pizza[]" value="<%=size%>">
+	<input type="hidden" name="pizza[]" value="<%=crust%>">
+	<strong>Name on the order is-</strong> <%=lastname%><br>
+	<br>
+	<strong>Size-</strong> <%=size%><br>
+	----------------------<br>
+	<strong>Crust-</strong> <%=crust%> Crust<br>
+	----------------------<br>
+	<strong>Sauce(s)-</strong> <br>
+	<%if sauce == nil%>
+	<%else%>
+		<%sauce.each do |x| %>
+	<%if x == "on"%>
+	<%else%>
+		<input type="hidden" name="pizza[]" value="<%=x%>">
+		<img src = "/images/<%=x%>.jpeg"  width="60" height="60">
+			<%=x%><br>
+			<%end%>
+		<%end%>
+	<%end%>
+	----------------------<br>
+	<strong>Meats-</strong> <br>
+	<%if meats == nil%>
+	<%else%>
+		<%meats.each do |x| %>
+	<%if x == "on"%>
+	<%else%>
+		<input type="hidden" name="pizza[]" value="<%=x%>">
+		<img src = "/images/<%=x%>.jpeg"  width="60" height="60">
 		<%=x%><br>
+			<%end%>
 		<%end%>
-	<%end%>
-<%end%><br>
-----------------------<br>
-<strong>Meats-</strong> <br>
-<%if meats == nil%>
-<%else%>
-	<%meats.each do |x| %>
-<%if x == "on"%>
-<%else%>
-	<img src = "/images/<%=x%>.jpeg"  width="60" height="60">
-	<%=x%><br>
+	<%end%><br>
+	----------------------<br>
+	<strong>Veggies-</strong><br>
+	<%if veggies == nil%>
+	<%else%>
+		<%veggies.each do |x| %>
+	<%if x == "on"%>
+	<%else%>
+		<input type="hidden" name="pizza[]" value="<%=x%>">
+		<img src = "/images/<%=x%>.jpeg"  width="60" height="60">
+		<%=x%><br>
+			<%end%>
 		<%end%>
-	<%end%>
-<%end%><br>
-----------------------<br>
-<strong>Veggies-</strong><br>
-<%if veggies == nil%>
-<%else%>
-	<%veggies.each do |x| %>
-<%if x == "on"%>
-<%else%>
-	<img src = "/images/<%=x%>.jpeg"  width="60" height="60">
-	<%=x%><br>
-		<%end%>
-	<%end%>
-<%end%><br>
-----------------------<br>
+	<%end%><br>
+	----------------------<br>
 
 <strong>Cheese-</strong><br>
 <%if cheese == nil%>
 <%else%>
 <%cheese.each do |x|%>
-<img src = "/images/<%=x%>.jpeg"  width="60" height="60">
+	<input type="hidden" name="pizza[]" value="<%=x%>">
+	<img src = "/images/<%=x%>.jpeg"  width="60" height="60">
 	<%=x%><br>
 	<%end%>
-<%end%><br>
-----------------------<br>
-<strong>Delivery, pickup, or dine-in-</strong> <%=delivery%><br>
-<br>
-<strong>Delivery Address-</strong> <%=address%>
+	<%end%><br>
+	----------------------<br>
+	<strong>Delivery, pickup, or dine-in-</strong> <%=delivery%><br>
+	<br>
+	<strong>Delivery Address-</strong> <%=address%><br>
+		<br>
+	<button type="submit">Add another pizza?</button>
+</form></center>
+
+<center>
 <form method="post" action="results">
-<input type="submit" value="Make another pizza?">
+<button type="submit">Start over?</button><br>
+(Warning! You will lose all pizzas!)<br>
 </form></center>
 
 
+<center>
+<form method="post" action="results">
+<button type="submit">Proceed to checkout</button>
+<input type="hidden" name="pizza[]" value="<%=size%>">
+<input type="hidden" name="pizza[]" value="<%=crust%>">
+<%if sauce == nil%>
+<%else%>
+	<%sauce.each do |x| %>
+		<%if x == "on"%>
+		<%else%>
+			<input type="hidden" name="pizza[]" value="<%=x%>">
+		<%end%>
+	<%end%>
+<%end%>
+<%if meats == nil%>
+<%else%>
+	<%meats.each do |x| %>
+		<%if x == "on"%>
+		<%else%>
+			<input type="hidden" name="pizza[]" value="<%=x%>">
+		<%end%>
+	<%end%>
+<%end%>
+<%if veggies == nil%>
+<%else%>
+	<%veggies.each do |x| %>
+		<%if x == "on"%>
+		<%else%>
+			<input type="hidden" name="pizza[]" value="<%=x%>">
+		<%end%>
+	<%end%>
+<%end%>
+<%if cheese == nil%>
+<%else%>
+	<%cheese.each do |x|%>
+		<input type="hidden" name="pizza[]" value="<%=x%>">
+	<%end%>
+<%end%>
+
+
+</form></center>
