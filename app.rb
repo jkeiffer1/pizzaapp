@@ -59,5 +59,14 @@ post '/results' do
 	session[:lastname] = params[:lastname]
 	session[:delivery] = params[:delivery]
 	session[:address] = params[:address]
-	redirect '/'
+	session[:pizza] = params[:pizza]
+	redirect "/checkout"
+end
+
+get '/checkout' do
+	erb :results, locals:{pizza:session[:pizza]}
+	end
+
+post '/checkout' do
+	session[:pizza] = params[:pizza]
 end

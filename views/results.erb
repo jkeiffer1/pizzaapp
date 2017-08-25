@@ -7,7 +7,7 @@ Here's your pizza!</h1>
 	<br>
 	<strong>Size-</strong> <%=size%><br>
 	----------------------<br>
-	<strong>Crust-</strong> <%=crust%> Crust<br>
+	<strong>Crust-</strong> <%=crust%><br>
 	----------------------<br>
 	<strong>Sauce(s)-</strong> <br>
 	<%if sauce == nil%>
@@ -66,15 +66,11 @@ Here's your pizza!</h1>
 	<button type="submit">Add another pizza?</button>
 </form></center>
 
-<center>
-<form method="post" action="results">
-<button type="submit">Start over?</button><br>
-(Warning! You will lose all pizzas!)<br>
-</form></center>
+
 
 
 <center>
-<form method="post" action="results">
+<form method="post" action="checkout">
 <button type="submit">Proceed to checkout</button>
 <input type="hidden" name="pizza[]" value="<%=size%>">
 <input type="hidden" name="pizza[]" value="<%=crust%>">
@@ -111,6 +107,12 @@ Here's your pizza!</h1>
 		<input type="hidden" name="pizza[]" value="<%=x%>">
 	<%end%>
 <%end%>
+</form></center>
 
 
+<center>
+<form method="get" action="/">
+<button type="submit">Start over?</button><br>
+Click here to begin your order from the beginning.<br>
+(Warning! You will lose all pizzas!)<br>
 </form></center>
