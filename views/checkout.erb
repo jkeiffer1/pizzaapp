@@ -1,3 +1,17 @@
 <%pizza.each do |x|%>
-<%=x%>
+	<%x.each do |m|%>
+		<%m%>
+	<%end%>
 <%end%>
+
+<%if pizzatotal == nil%>
+<%else%>
+<%pizzatotal.each do |x|%>
+	<%x.each do |m|%>
+		<%=m%>
+		<%end%>
+	<%end%>
+<%end%>
+	
+
+The total is: <%=total.sum%>

@@ -3,6 +3,7 @@ enable :sessions
 
 
 get '/' do
+	
 	erb :pizza
 end
 
@@ -23,13 +24,13 @@ post '/pizza' do
 		session[:total] << price
 	else
 		session[:total] << price
+	end
 	session[:crust] = params[:crust]
 	session[:sauce] = params[:sauce]
 	session[:meats] = params[:meats]
 	session[:veggies] = params[:veggies]
 	session[:cheese] = params[:cheese]
 	redirect "/confirm"
-	end
 end
 
 get '/confirm' do
@@ -77,7 +78,7 @@ post '/results' do
 end
 
 get '/checkout' do
-	erb :checkout, locals:{pizza:session[:pizza]}
+	erb :checkout, locals:{pizza:session[:pizza], pizzatotal:session[:pizzatotal], total:session[:total]}
 	end 
 
 post '/checkout' do
