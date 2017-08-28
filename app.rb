@@ -66,24 +66,23 @@ get '/results' do
 end
 
 post '/results' do
-	session[:size] = params[:size]
-	session[:crust] = params[:crust]
-	session[:sauce] = params[:sauce]
-	session[:meats] = params[:meats]
-	session[:veggies] = params[:veggies]
-	session[:cheese] = params[:cheese]
-	session[:lastname] = params[:lastname]
-	session[:delivery] = params[:delivery]
-	session[:address] = params[:address]
 	session[:pizza] = params[:pizza]
-	p "#{session[:pizza]} here is pizza"
-	redirect "/checkout"
+		if session[:pizzatotal] == nil
+			session[:pizzatotal] = []
+			session[:pizzatotal] << session[:pizza]
+		else
+			session[:pizzatotal] << session[:pizza]
+	p "#{session[:pizza]}here is pizza"
+	redirect '/'
 end
 
 get '/checkout' do
-	erb :results, locals:{pizza:session[:pizza]}
+	p "#{session[:pizza]}here is pizza 2"
+	erb :checkout, locals:{pizza:session[:pizza]}
 	end
 
 post '/checkout' do
+	p "#{session[:pizza]} here is pizza 3"
 	session[:pizza] = params[:pizza]
+	redirect '/checkout'
 end
