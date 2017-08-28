@@ -7,13 +7,29 @@ get '/' do
 end
 
 post '/pizza' do
+	price = 0
 	session[:size] = params[:size]
+	if session[:size] == "small"
+		price += 4
+	elsif session[:size] == "medium"
+		price += 5
+	elsif session[:size] == "large"
+		price += 7
+	else session[:size] == "x-large"
+		price += 9
+	end
+	if session[:total] == nil
+		session[:total] = []
+		session[:total] << price
+	else
+		session[:total] << price
 	session[:crust] = params[:crust]
 	session[:sauce] = params[:sauce]
 	session[:meats] = params[:meats]
 	session[:veggies] = params[:veggies]
 	session[:cheese] = params[:cheese]
 	redirect "/confirm"
+	end
 end
 
 get '/confirm' do
@@ -60,6 +76,7 @@ post '/results' do
 	session[:delivery] = params[:delivery]
 	session[:address] = params[:address]
 	session[:pizza] = params[:pizza]
+	p "#{session[:pizza]} here is pizza"
 	redirect "/checkout"
 end
 
