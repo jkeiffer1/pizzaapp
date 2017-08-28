@@ -1,20 +1,21 @@
 <center><h1>Here is your order.</h1></center>
 
 <%pizza.each do |x|%><br>
-<strong>Pizza</strong>
 	<%x.each do |m|%><br>
 		<%=m%>
+		
 	<%end%>
+
 <%end%>
 
 <%if pizzatotal == nil%>
 <%else%>
 <br>
 <br>
-<%pizzatotal.each do |x|%><br>
+<%pizzatotal.each do |y|%><br>
 <strong>Pizza</strong><br>
-	<%x.each do |m|%>
-		<%=m%><br>
+	<%y.each do |n|%>
+		<%=n%><br>
 		<%end%>
 	<%end%>
 <%end%>
