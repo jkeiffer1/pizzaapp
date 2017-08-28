@@ -66,23 +66,24 @@ get '/results' do
 end
 
 post '/results' do
-	session[:pizza] = params[:pizza]
+		pizsa = params[:pizza]
 		if session[:pizzatotal] == nil
 			session[:pizzatotal] = []
-			session[:pizzatotal] << session[:pizza]
+			session[:pizzatotal] << pizsa
 		else
-			session[:pizzatotal] << session[:pizza]
-	p "#{session[:pizza]}here is pizza"
+			session[:pizzatotal] << pizsa
+		end
 	redirect '/'
 end
 
 get '/checkout' do
-	p "#{session[:pizza]}here is pizza 2"
 	erb :checkout, locals:{pizza:session[:pizza]}
-	end
+	end 
 
 post '/checkout' do
-	p "#{session[:pizza]} here is pizza 3"
-	session[:pizza] = params[:pizza]
+	pizsa = params[:pizza]
+	pizzas = []
+	pizzas << pizsa
+	session[:pizza] = pizzas
 	redirect '/checkout'
 end
