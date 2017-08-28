@@ -1,17 +1,23 @@
-<%pizza.each do |x|%>
-	<%x.each do |m|%>
-		<%m%>
+<center><h1>Here is your order.</h1></center>
+
+<%pizza.each do |x|%><br>
+<strong>Pizza</strong>
+	<%x.each do |m|%><br>
+		<%=m%>
 	<%end%>
 <%end%>
 
 <%if pizzatotal == nil%>
 <%else%>
-<%pizzatotal.each do |x|%>
+<br>
+<br>
+<%pizzatotal.each do |x|%><br>
+<strong>Pizza</strong><br>
 	<%x.each do |m|%>
-		<%=m%>
+		<%=m%><br>
 		<%end%>
 	<%end%>
 <%end%>
 	
-
-The total is: <%=total.sum%>
+<br>
+The total comes to: <%=total.sum%>

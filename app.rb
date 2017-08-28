@@ -3,7 +3,7 @@ enable :sessions
 
 
 get '/' do
-	
+	session[:total] = nil
 	erb :pizza
 end
 
@@ -25,6 +25,14 @@ post '/pizza' do
 	else
 		session[:total] << price
 	end
+	localtotal = session[:total]
+	if localtotal == nil
+		session[:carried] = []
+		session[:carried] << localtotal.flatten
+	else
+		session[:carried] << localtotal.flatten
+	end
+
 	session[:crust] = params[:crust]
 	session[:sauce] = params[:sauce]
 	session[:meats] = params[:meats]
@@ -78,7 +86,7 @@ post '/results' do
 end
 
 get '/checkout' do
-	erb :checkout, locals:{pizza:session[:pizza], pizzatotal:session[:pizzatotal], total:session[:total]}
+	erb :checkout, locals:{pizza:session[:pizza], pizzatotal:session[:pizzatotal], carried:session[:carried]}
 	end 
 
 post '/checkout' do
